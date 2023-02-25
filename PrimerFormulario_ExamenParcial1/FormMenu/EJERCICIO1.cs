@@ -74,5 +74,10 @@ namespace FormMenu
             
 
         }
+
+        private void EJERCICIO1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

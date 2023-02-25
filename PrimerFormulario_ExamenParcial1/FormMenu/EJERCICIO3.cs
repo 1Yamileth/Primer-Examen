@@ -16,39 +16,41 @@ namespace FormMenu
         {
             InitializeComponent();
         }
-
-        private void Ingresar_button_Click(object sender, EventArgs e)
+        //LOS HICE ASINCRONO YA QUE SE TARDABA DEMASIADO EN GENERAR LOS PROCESOS
+        private async void Ingresar_button_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            int numeroAleatorio = random.Next(1, 100);
-            MostrarNumerosConNombreApellido(numeroAleatorio);
+           Random random = new Random();
+           int numeroAleatorio = random.Next(1, 100);
+           await MostrarNumerosConNombreApellido(numeroAleatorio);
         }
 
         //VALIDANDO LOS NUMEROS
-        public void MostrarNumerosConNombreApellido(int i)
+        public async Task MostrarNumerosConNombreApellido(int i)
         {
             string nombre = "Marilyn Yamileth", apellido = "Mejia Aguilar";
 
             // for (int i=1; i>=100; i++)
-            //{
+           // {
+                //if (rand == i)
+                //{
+                    if (i % 3 == 0 && i % 5 == 0)
+                    {
+                        Numero_textBox.Text = Convert.ToString(i);
+                        Datos_textBox.Text = nombre + " " + apellido;
+                    }
+                    else if (i % 3 == 0)
+                    {
+                        Datos_textBox.Text = nombre;
 
-            if (i % 3 == 0 && i % 5 == 0)
-            {
-                Numero_textBox.Text = Convert.ToString(i);
-                Datos_textBox.Text = nombre + " " + apellido;
-            }
-            else if (i % 3 == 0)
-            {
-                Datos_textBox.Text = nombre;
-
-                Numero_textBox.Text = Convert.ToString(i);
-            }
-            else if (i % 5 == 0)
-            {
-                Numero_textBox.Text = Convert.ToString(i);
-                Datos_textBox.Text = apellido;
-            }
-
+                        Numero_textBox.Text = Convert.ToString(i);
+                    }
+                    else if (i % 5 == 0)
+                    {
+                        Numero_textBox.Text = Convert.ToString(i);
+                        Datos_textBox.Text = apellido;
+                    }
+            await Task.CompletedTask;
+            // }
 
             //}
         }
@@ -60,7 +62,9 @@ namespace FormMenu
         }
 
 
-        private void Salir_button_Click_1(object sender, EventArgs e)
+        
+
+        private void Salir_button_Click(object sender, EventArgs e)
         {
             Close();
         }

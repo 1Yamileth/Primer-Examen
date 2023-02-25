@@ -19,7 +19,7 @@ namespace FormMenu
 
         private void Ingreso_Deposito_button_Click(object sender, EventArgs e)
         {
-            double deposito = Convert.ToDouble(Deposito_textBox.Text), tasa = 1.15;
+            double deposito = 200000, tasa = 1.15;
             //VALIDAMOS QUE INGRESE LOS DATOS
             if (string.IsNullOrEmpty(Ingreso_Deposito_button.Text))
             {
@@ -45,13 +45,13 @@ namespace FormMenu
         }
 
         //VALIDANDO QUE NO INGRESE LETRAS
-        private void Deposito_textBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        //private void Deposito_textBox_KeyPress(object sender, KeyPressEventArgs e)
+     /*   {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
-        }
+        }*/
         //CALCULANDO EL INTERES MENSUAL
         public double CalcularInteres(double capital, double tasa)
         {
@@ -73,20 +73,25 @@ namespace FormMenu
             // limpiar el ListBox
             Informe_listBox.Items.Clear();
 
-            // mostrar los intereses de cada mes en el ListBox
+            /// mostrar los intereses acumulados hasta cada mes en el ListBox
+            double totalIntereses = 0;
             for (int i = 0; i < intereses.Length; i++)
             {
                 double interes = intereses[i];
                 string mes = meses[i];
 
-                Informe_listBox.Items.Add(mes + ": L " + interes.ToString("N2"));
+                totalIntereses += interes;//ACUMULADOR DE LOS INTERESES
+                Informe_listBox.Items.Add(mes + ": L " + totalIntereses.ToString("N2"));
             }
         }
 
-        private void Salir_button_Click(object sender, EventArgs e)
+       
+
+        private void Salir_button1_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+       
     }
 }

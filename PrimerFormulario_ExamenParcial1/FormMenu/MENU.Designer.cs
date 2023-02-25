@@ -137,11 +137,12 @@
             this.SALIRBUTTON.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SALIRBUTTON.Location = new System.Drawing.Point(572, 392);
             this.SALIRBUTTON.Name = "SALIRBUTTON";
-            this.SALIRBUTTON.Size = new System.Drawing.Size(75, 23);
+            this.SALIRBUTTON.Size = new System.Drawing.Size(75, 33);
             this.SALIRBUTTON.TabIndex = 8;
             this.SALIRBUTTON.Text = "SALIR";
             this.SALIRBUTTON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SALIRBUTTON.UseVisualStyleBackColor = true;
+            this.SALIRBUTTON.Click += new System.EventHandler(this.SALIRBUTTON_Click);
             // 
             // MENU
             // 
@@ -159,6 +160,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MENU";
             this.Text = "MENU";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

@@ -13,19 +13,12 @@ namespace FormMenu
 {
     public partial class EJERICICIO2 : Form
     {
-        private Producto[] productos;
-        private int cantidadProductos;
+        private List<Producto> productos = new List<Producto>();
+
         public EJERICICIO2()
         {
             InitializeComponent();
 
-            Products_GridView.Columns.Add("Nombre", "Nombre");
-            Products_GridView.Columns.Add("Precio", "Precio");
-            Products_GridView.Columns.Add("Cantidad", "Cantidad");
-            Products_GridView.Columns["Precio"].DefaultCellStyle.Format = "C2";
-
-            productos = new Producto[10];
-            cantidadProductos = 0;
 
         }
 
@@ -34,107 +27,119 @@ namespace FormMenu
 
         }
 
-        private void NuevoP_button_Click(object sender, EventArgs e)
-        {
-            if (cantidadProductos < productos.Length)
-            {
-                Producto producto = new Producto();
-                producto.Nombre = Producto_textBox.Text;
-                if (decimal.TryParse(Precio_Pro_textBox.Text, out decimal precio))
-                {
-                    producto.Precio = precio;
-                }
-                else
-                {
-                    MessageBox.Show("El precio " + Precio_Pro_textBox.Text + " no es válido.");
-                    return;
-                }
-                if (int.TryParse(Cantidad_Pro_textBox.Text, out int cantidad))
-                {
-                    producto.Cantidad = cantidad;
-                }
-                else
-                {
-                    MessageBox.Show("La cantidad " + Cantidad_Pro_textBox.Text + " no es válida.");
-                    return;
-                }
-
-                productos[cantidadProductos] = producto;
-                cantidadProductos++;
-
-
-                Products_GridView.Rows.Add(producto.Nombre, producto.Precio, producto.Cantidad);
-
-
-                Products_GridView.Text = "";
-                Precio_Pro_textBox.Text = "";
-                Cantidad_Pro_textBox.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("No se pueden agregar más productos.");
-            }
-        }
-
         private async void Descuento_button_Click(object sender, EventArgs e)
         {
+            double descuento = 0.15;
+            double total = 0;
 
-            List<Producto> productos = new List<Producto>();
-            foreach (DataGridViewRow row in Products_GridView.Rows)
+            // VALIDANDO QUE HAYA INGRESADO TODOS LO DATOS
+            if (string.IsNullOrWhiteSpace(Producto_textBox.Text))
             {
-                string nombre = row.Cells["Nombre"].Value?.ToString();
-                decimal precio = 0;
-                if (decimal.TryParse(row.Cells["Precio"].Value?.ToString(), out precio))
-                {
-                    int cantidad = 0;
-                    if (int.TryParse(row.Cells["Cantidad"].Value?.ToString(), out cantidad))
-                    {
-                        Producto producto = new Producto();
-                        producto.Nombre = nombre;
-                        producto.Precio = precio;
-                        producto.Cantidad = cantidad;
-                        productos.Add(producto);
-                    }
-                }
+                MessageBox.Show("Por favor ingrese los productos para calcular el descuento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            // Calcular el descuento del 15%
-            decimal descuento = await CalculoDeDescuentoAsync(productos.ToArray());
 
-            // Calcular el total a pagar
-            decimal total = productos.Sum(p => p.Precio * p.Cantidad) - descuento;
+            if (string.IsNullOrWhiteSpace(Precio_Pro_textBox.Text))
+            {
+                MessageBox.Show("Por favor ingrese el precio para calcular el descuento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            // Mostrar el descuento y el total a pagar al usuario
-            MessageBox.Show("Descuento del 15%: $" + descuento.ToString("0.00") + "\nTotal a pagar: $" + total.ToString("0.00"));
+            if ( string.IsNullOrWhiteSpace(Cantidad_Pro_textBox.Text))
+            {
+                MessageBox.Show("Por favor ingrese las cantidades para calcular el descuento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Calcular el total de la factura
+            foreach (Producto producto in productos)
+            {
+                total += producto.Precio * producto.Cantidad;
+            }
 
+            // Aplicar el descuento asíncronamente
+            await Task.Run(() =>
+            {
+                double descuentoCalculado = total * descuento;
+                double totalPagar = total - descuentoCalculado;
+
+                // Mostrar el resultado en la UI
+                this.Invoke(new Action(() =>// CON EL INVOKE ASEGURAMOS QUE SE MUESTRE EN LA INTERFAZ COMO QUEREMOS
+                {
+                    MessageBox.Show($"El descuento del 15% es de: {descuentoCalculado:C}\nEl total a pagar es de: {totalPagar:C}", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }));
+            });
         }
 
-        private async Task<decimal> CalculoDeDescuentoAsync(Producto[] productos)
+        private void Agregar_button_Click(object sender, EventArgs e)
         {
 
-            await Task.Delay(1000);
+            //LEE LO QUE EL USUARIO INGRESA
+            string producto = Producto_textBox.Text;
+            double precio = Convert.ToDouble(Precio_Pro_textBox.Text);
+            int cantidad = Convert.ToInt32(Cantidad_Pro_textBox.Text);
+            //SE HACE UN OBJETO Y LOS VALORES SE AGREGAN A LA LISTA
+            Producto nuevoProducto = new Producto(producto, precio, cantidad);
+            productos.Add(nuevoProducto);
 
-            decimal total = productos.Sum(p => p.Precio);
-            decimal descuento = total * 0.15m;
-            return descuento;
+            Prodcutos_dataGridView.Rows.Add(producto, precio, cantidad);
         }
-        
-      
-        public class Producto
+        private class Producto
         {
+            /* para almacenar la información de cada producto ingresado
+             * por el usuario (nombre, precio y cantidad), y se guarda una
+             * lista de productos en la variable productos*/
             public string Nombre { get; set; }
-            public decimal Precio { get; set; }
+            public double Precio { get; set; }
             public int Cantidad { get; set; }
-        }
 
-        private void Products_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            public Producto(string nombre, double precio, int cantidad)
+            {
+                Nombre = nombre;
+                Precio = precio;
+                Cantidad = cantidad;
+            }
+        }
+        //VALIDANDO QUE NO INGRESE LETRAS
+        private void Deposito_textBox_KeyPress(object sender, KeyPressEventArgs e)
+         {
+               if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+               {
+                   e.Handled = true;
+               }
+           }
+      
+        //VALIDANDO QUE NO ME INGRESE NUMEROS
+        private void Producto_textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if(char.IsDigit(e.KeyChar))
+               {
+                e.Handled = true;
+            }
+        }
+        //VALIDANDO QUE NO INGRESE LETRAS
+        private void Precio_Pro_textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+               {
+                e.Handled = true;
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Cantidad_Pro_textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+               {
+                e.Handled = true;
+            }
+        }
+        private void Salir_button_Click(object sender, EventArgs e)
         {
             Close();
         }
     }
 }
+
+   
+
+     
 

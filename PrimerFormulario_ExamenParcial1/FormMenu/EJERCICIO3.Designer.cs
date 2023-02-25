@@ -65,7 +65,7 @@
             this.Datos_textBox.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
             this.Datos_textBox.Location = new System.Drawing.Point(258, 84);
             this.Datos_textBox.Name = "Datos_textBox";
-            this.Datos_textBox.Size = new System.Drawing.Size(174, 25);
+            this.Datos_textBox.Size = new System.Drawing.Size(235, 25);
             this.Datos_textBox.TabIndex = 14;
             // 
             // Numero_textBox
@@ -73,7 +73,7 @@
             this.Numero_textBox.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
             this.Numero_textBox.Location = new System.Drawing.Point(258, 36);
             this.Numero_textBox.Name = "Numero_textBox";
-            this.Numero_textBox.Size = new System.Drawing.Size(174, 25);
+            this.Numero_textBox.Size = new System.Drawing.Size(235, 25);
             this.Numero_textBox.TabIndex = 13;
             // 
             // label2
@@ -90,6 +90,7 @@
             // 
             // Salir_button
             // 
+            this.Salir_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Salir_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
             this.Salir_button.Image = global::FormMenu.Properties.Resources.boton_x;
             this.Salir_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -100,7 +101,7 @@
             this.Salir_button.Text = "CANCELAR";
             this.Salir_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Salir_button.UseVisualStyleBackColor = true;
-            this.Salir_button.Click += new System.EventHandler(this.Salir_button_Click_1);
+            this.Salir_button.Click += new System.EventHandler(this.Salir_button_Click);
             // 
             // Limpiar_button
             // 
@@ -135,6 +136,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
+            this.CancelButton = this.Salir_button;
             this.ClientSize = new System.Drawing.Size(608, 272);
             this.Controls.Add(this.Salir_button);
             this.Controls.Add(this.Limpiar_button);
@@ -144,6 +146,8 @@
             this.Controls.Add(this.Numero_textBox);
             this.Controls.Add(this.Ingresar_button);
             this.Controls.Add(this.label2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EJERCICIO3";
             this.Text = "EJERCICIO3";
             this.ResumeLayout(false);

@@ -93,6 +93,26 @@ namespace FormMenu.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calcular {
+            get {
+                object obj = ResourceManager.GetObject("calcular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carrito_de_compras {
+            get {
+                object obj = ResourceManager.GetObject("carrito-de-compras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cheque {
             get {
                 object obj = ResourceManager.GetObject("cheque", resourceCulture);
@@ -106,6 +126,16 @@ namespace FormMenu.Properties {
         internal static System.Drawing.Bitmap matematicas {
             get {
                 object obj = ResourceManager.GetObject("matematicas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mercado {
+            get {
+                object obj = ResourceManager.GetObject("mercado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

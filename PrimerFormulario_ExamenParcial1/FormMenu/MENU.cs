@@ -37,5 +37,10 @@ namespace FormMenu
             Hide();
             form3.Show();
         }
+
+        private void SALIRBUTTON_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

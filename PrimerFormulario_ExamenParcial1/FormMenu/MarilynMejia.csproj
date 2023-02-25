@@ -143,5 +143,14 @@
   <ItemGroup>
     <None Include="Resources\reiniciar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito-de-compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mercado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calcular.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

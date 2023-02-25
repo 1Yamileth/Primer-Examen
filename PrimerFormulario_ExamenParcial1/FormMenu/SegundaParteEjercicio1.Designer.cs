@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Salir_button = new System.Windows.Forms.Button();
-            this.Deposito_textBox = new System.Windows.Forms.TextBox();
+            this.Salir_button1 = new System.Windows.Forms.Button();
             this.Informe_listBox = new System.Windows.Forms.ListBox();
             this.Ingreso_Deposito_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,27 +38,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Salir_button
+            // Salir_button1
             // 
-            this.Salir_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Salir_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Salir_button.Image = global::FormMenu.Properties.Resources.boton_x;
-            this.Salir_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Salir_button.Location = new System.Drawing.Point(436, 126);
-            this.Salir_button.Name = "Salir_button";
-            this.Salir_button.Size = new System.Drawing.Size(96, 40);
-            this.Salir_button.TabIndex = 11;
-            this.Salir_button.Text = "Cancelar";
-            this.Salir_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Salir_button.UseVisualStyleBackColor = true;
-            // 
-            // Deposito_textBox
-            // 
-            this.Deposito_textBox.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deposito_textBox.Location = new System.Drawing.Point(180, 80);
-            this.Deposito_textBox.Name = "Deposito_textBox";
-            this.Deposito_textBox.Size = new System.Drawing.Size(191, 25);
-            this.Deposito_textBox.TabIndex = 10;
+            this.Salir_button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Salir_button1.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Salir_button1.Image = global::FormMenu.Properties.Resources.boton_x;
+            this.Salir_button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Salir_button1.Location = new System.Drawing.Point(436, 126);
+            this.Salir_button1.Name = "Salir_button1";
+            this.Salir_button1.Size = new System.Drawing.Size(96, 40);
+            this.Salir_button1.TabIndex = 11;
+            this.Salir_button1.Text = "Cancelar";
+            this.Salir_button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Salir_button1.UseVisualStyleBackColor = true;
+            this.Salir_button1.Click += new System.EventHandler(this.Salir_button1_Click);
             // 
             // Informe_listBox
             // 
@@ -68,9 +60,9 @@
             this.Informe_listBox.ItemHeight = 16;
             this.Informe_listBox.Items.AddRange(new object[] {
             "La informacion aparecera aqui..."});
-            this.Informe_listBox.Location = new System.Drawing.Point(12, 126);
+            this.Informe_listBox.Location = new System.Drawing.Point(12, 93);
             this.Informe_listBox.Name = "Informe_listBox";
-            this.Informe_listBox.Size = new System.Drawing.Size(407, 148);
+            this.Informe_listBox.Size = new System.Drawing.Size(407, 180);
             this.Informe_listBox.TabIndex = 9;
             // 
             // Ingreso_Deposito_button
@@ -91,11 +83,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 83);
+            this.label2.Location = new System.Drawing.Point(29, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 16);
+            this.label2.Size = new System.Drawing.Size(400, 16);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Ingrese su deposito:";
+            this.label2.Text = "De \"click\" en el boton \"Calcular\" para saber su interes mensual";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
@@ -117,12 +110,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(569, 299);
-            this.Controls.Add(this.Salir_button);
-            this.Controls.Add(this.Deposito_textBox);
+            this.Controls.Add(this.Salir_button1);
             this.Controls.Add(this.Informe_listBox);
             this.Controls.Add(this.Ingreso_Deposito_button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SegundaParteEjercicio1";
             this.Text = "SegundaParteEjercicio1";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -133,8 +127,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Salir_button;
-        private System.Windows.Forms.TextBox Deposito_textBox;
+        private System.Windows.Forms.Button Salir_button1;
         private System.Windows.Forms.ListBox Informe_listBox;
         private System.Windows.Forms.Button Ingreso_Deposito_button;
         private System.Windows.Forms.Label label2;

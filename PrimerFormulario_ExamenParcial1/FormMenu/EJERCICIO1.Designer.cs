@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.Nombre_textBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Contra_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Mostrar_button = new System.Windows.Forms.Button();
             this.Cancelar_button = new System.Windows.Forms.Button();
             this.Ingresar_button = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Nombre_textBox
@@ -95,6 +94,10 @@
             this.label1.Text = "BANCOS C.A";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FormMenu.Properties.Resources.banco__2_;
@@ -145,10 +148,6 @@
             this.Ingresar_button.UseVisualStyleBackColor = true;
             this.Ingresar_button.Click += new System.EventHandler(this.Ingresar_button_Click);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // EJERCICIO1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,10 +162,13 @@
             this.Controls.Add(this.Contra_textBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EJERCICIO1";
             this.Text = "EJERCICIO1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.EJERCICIO1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
