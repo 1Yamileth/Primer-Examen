@@ -136,6 +136,13 @@ namespace FormMenu
         {
             Close();
         }
+
+        private void Regreso_button_Click(object sender, EventArgs e)
+        {
+            MENU form6 = new MENU();
+            Hide();
+            form6.Show();
+        }
     }
 }
 

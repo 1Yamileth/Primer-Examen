@@ -44,6 +44,7 @@
             this.Agregar_button = new System.Windows.Forms.Button();
             this.Salir_button = new System.Windows.Forms.Button();
             this.Descuento_button = new System.Windows.Forms.Button();
+            this.Regreso_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Prodcutos_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -188,7 +189,7 @@
             this.Salir_button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Salir_button.Location = new System.Drawing.Point(36, 323);
             this.Salir_button.Name = "Salir_button";
-            this.Salir_button.Size = new System.Drawing.Size(246, 53);
+            this.Salir_button.Size = new System.Drawing.Size(194, 53);
             this.Salir_button.TabIndex = 10;
             this.Salir_button.Text = "CANCELAR";
             this.Salir_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -209,12 +210,27 @@
             this.Descuento_button.UseVisualStyleBackColor = true;
             this.Descuento_button.Click += new System.EventHandler(this.Descuento_button_Click);
             // 
+            // Regreso_button
+            // 
+            this.Regreso_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
+            this.Regreso_button.Image = global::FormMenu.Properties.Resources.reiniciar__1_;
+            this.Regreso_button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Regreso_button.Location = new System.Drawing.Point(36, 382);
+            this.Regreso_button.Name = "Regreso_button";
+            this.Regreso_button.Size = new System.Drawing.Size(194, 53);
+            this.Regreso_button.TabIndex = 16;
+            this.Regreso_button.Text = "MENU PRINCIPAL";
+            this.Regreso_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Regreso_button.UseVisualStyleBackColor = true;
+            this.Regreso_button.Click += new System.EventHandler(this.Regreso_button_Click);
+            // 
             // EJERICICIO2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
-            this.ClientSize = new System.Drawing.Size(684, 434);
+            this.ClientSize = new System.Drawing.Size(684, 470);
+            this.Controls.Add(this.Regreso_button);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Prodcutos_dataGridView);
             this.Controls.Add(this.Agregar_button);
@@ -257,5 +273,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDADColumn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Regreso_button;
     }
 }

@@ -92,6 +92,11 @@ namespace FormMenu
             Close();
         }
 
-       
+        private void Regresar_button_Click(object sender, EventArgs e)
+        {
+            MENU form4 = new MENU();
+            Hide();
+            form4.Show();
+        }
     }
 }

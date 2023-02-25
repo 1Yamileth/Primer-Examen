@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Nombre_textBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Contra_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Regresar_button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Mostrar_button = new System.Windows.Forms.Button();
             this.Cancelar_button = new System.Windows.Forms.Button();
@@ -98,6 +100,21 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // Regresar_button
+            // 
+            this.Regresar_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Regresar_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
+            this.Regresar_button.Image = global::FormMenu.Properties.Resources.reiniciar__1_;
+            this.Regresar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Regresar_button.Location = new System.Drawing.Point(273, 188);
+            this.Regresar_button.Name = "Regresar_button";
+            this.Regresar_button.Size = new System.Drawing.Size(135, 35);
+            this.Regresar_button.TabIndex = 18;
+            this.Regresar_button.Text = "Menu Principal";
+            this.Regresar_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Regresar_button.UseVisualStyleBackColor = true;
+            this.Regresar_button.Click += new System.EventHandler(this.Regresar_button_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FormMenu.Properties.Resources.banco__2_;
@@ -126,7 +143,7 @@
             this.Cancelar_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
             this.Cancelar_button.Image = global::FormMenu.Properties.Resources.boton_x;
             this.Cancelar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Cancelar_button.Location = new System.Drawing.Point(220, 197);
+            this.Cancelar_button.Location = new System.Drawing.Point(157, 188);
             this.Cancelar_button.Name = "Cancelar_button";
             this.Cancelar_button.Size = new System.Drawing.Size(97, 35);
             this.Cancelar_button.TabIndex = 15;
@@ -139,7 +156,7 @@
             this.Ingresar_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
             this.Ingresar_button.Image = global::FormMenu.Properties.Resources.cheque;
             this.Ingresar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Ingresar_button.Location = new System.Drawing.Point(103, 197);
+            this.Ingresar_button.Location = new System.Drawing.Point(40, 188);
             this.Ingresar_button.Name = "Ingresar_button";
             this.Ingresar_button.Size = new System.Drawing.Size(97, 35);
             this.Ingresar_button.TabIndex = 14;
@@ -152,7 +169,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 247);
+            this.ClientSize = new System.Drawing.Size(450, 247);
+            this.Controls.Add(this.Regresar_button);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Mostrar_button);
             this.Controls.Add(this.Cancelar_button);
@@ -186,5 +204,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button Regresar_button;
     }
 }

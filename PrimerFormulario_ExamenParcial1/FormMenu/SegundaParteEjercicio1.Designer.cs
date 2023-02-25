@@ -29,29 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Salir_button1 = new System.Windows.Forms.Button();
             this.Informe_listBox = new System.Windows.Forms.ListBox();
-            this.Ingreso_Deposito_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Regresar_button = new System.Windows.Forms.Button();
+            this.Salir_button1 = new System.Windows.Forms.Button();
+            this.Ingreso_Deposito_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Salir_button1
-            // 
-            this.Salir_button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Salir_button1.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Salir_button1.Image = global::FormMenu.Properties.Resources.boton_x;
-            this.Salir_button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Salir_button1.Location = new System.Drawing.Point(436, 126);
-            this.Salir_button1.Name = "Salir_button1";
-            this.Salir_button1.Size = new System.Drawing.Size(96, 40);
-            this.Salir_button1.TabIndex = 11;
-            this.Salir_button1.Text = "Cancelar";
-            this.Salir_button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Salir_button1.UseVisualStyleBackColor = true;
-            this.Salir_button1.Click += new System.EventHandler(this.Salir_button1_Click);
             // 
             // Informe_listBox
             // 
@@ -64,20 +50,6 @@
             this.Informe_listBox.Name = "Informe_listBox";
             this.Informe_listBox.Size = new System.Drawing.Size(407, 180);
             this.Informe_listBox.TabIndex = 9;
-            // 
-            // Ingreso_Deposito_button
-            // 
-            this.Ingreso_Deposito_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ingreso_Deposito_button.Image = global::FormMenu.Properties.Resources.cheque;
-            this.Ingreso_Deposito_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Ingreso_Deposito_button.Location = new System.Drawing.Point(436, 80);
-            this.Ingreso_Deposito_button.Name = "Ingreso_Deposito_button";
-            this.Ingreso_Deposito_button.Size = new System.Drawing.Size(96, 40);
-            this.Ingreso_Deposito_button.TabIndex = 8;
-            this.Ingreso_Deposito_button.Text = "Calcular";
-            this.Ingreso_Deposito_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Ingreso_Deposito_button.UseVisualStyleBackColor = true;
-            this.Ingreso_Deposito_button.Click += new System.EventHandler(this.Ingreso_Deposito_button_Click);
             // 
             // label2
             // 
@@ -104,12 +76,57 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // Regresar_button
+            // 
+            this.Regresar_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Regresar_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Regresar_button.Image = global::FormMenu.Properties.Resources.reiniciar__1_;
+            this.Regresar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Regresar_button.Location = new System.Drawing.Point(436, 172);
+            this.Regresar_button.Name = "Regresar_button";
+            this.Regresar_button.Size = new System.Drawing.Size(96, 40);
+            this.Regresar_button.TabIndex = 12;
+            this.Regresar_button.Text = "Menu Principal";
+            this.Regresar_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Regresar_button.UseVisualStyleBackColor = true;
+            this.Regresar_button.Click += new System.EventHandler(this.Regresar_button_Click);
+            // 
+            // Salir_button1
+            // 
+            this.Salir_button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Salir_button1.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Salir_button1.Image = global::FormMenu.Properties.Resources.boton_x;
+            this.Salir_button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Salir_button1.Location = new System.Drawing.Point(436, 126);
+            this.Salir_button1.Name = "Salir_button1";
+            this.Salir_button1.Size = new System.Drawing.Size(96, 40);
+            this.Salir_button1.TabIndex = 11;
+            this.Salir_button1.Text = "Cancelar";
+            this.Salir_button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Salir_button1.UseVisualStyleBackColor = true;
+            this.Salir_button1.Click += new System.EventHandler(this.Salir_button1_Click);
+            // 
+            // Ingreso_Deposito_button
+            // 
+            this.Ingreso_Deposito_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ingreso_Deposito_button.Image = global::FormMenu.Properties.Resources.cheque;
+            this.Ingreso_Deposito_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Ingreso_Deposito_button.Location = new System.Drawing.Point(436, 80);
+            this.Ingreso_Deposito_button.Name = "Ingreso_Deposito_button";
+            this.Ingreso_Deposito_button.Size = new System.Drawing.Size(96, 40);
+            this.Ingreso_Deposito_button.TabIndex = 8;
+            this.Ingreso_Deposito_button.Text = "Calcular";
+            this.Ingreso_Deposito_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Ingreso_Deposito_button.UseVisualStyleBackColor = true;
+            this.Ingreso_Deposito_button.Click += new System.EventHandler(this.Ingreso_Deposito_button_Click);
+            // 
             // SegundaParteEjercicio1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(569, 299);
+            this.Controls.Add(this.Regresar_button);
             this.Controls.Add(this.Salir_button1);
             this.Controls.Add(this.Informe_listBox);
             this.Controls.Add(this.Ingreso_Deposito_button);
@@ -133,5 +150,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button Regresar_button;
     }
 }

@@ -36,6 +36,7 @@
             this.Salir_button = new System.Windows.Forms.Button();
             this.Limpiar_button = new System.Windows.Forms.Button();
             this.Ingresar_button = new System.Windows.Forms.Button();
+            this.Regreso_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -81,7 +82,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(35, 216);
+            this.label2.Location = new System.Drawing.Point(510, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 48);
             this.label2.TabIndex = 11;
@@ -94,9 +95,9 @@
             this.Salir_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
             this.Salir_button.Image = global::FormMenu.Properties.Resources.boton_x;
             this.Salir_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Salir_button.Location = new System.Drawing.Point(446, 124);
+            this.Salir_button.Location = new System.Drawing.Point(344, 124);
             this.Salir_button.Name = "Salir_button";
-            this.Salir_button.Size = new System.Drawing.Size(127, 77);
+            this.Salir_button.Size = new System.Drawing.Size(127, 62);
             this.Salir_button.TabIndex = 18;
             this.Salir_button.Text = "CANCELAR";
             this.Salir_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -108,9 +109,9 @@
             this.Limpiar_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
             this.Limpiar_button.Image = global::FormMenu.Properties.Resources.reiniciar;
             this.Limpiar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Limpiar_button.Location = new System.Drawing.Point(219, 124);
+            this.Limpiar_button.Location = new System.Drawing.Point(62, 192);
             this.Limpiar_button.Name = "Limpiar_button";
-            this.Limpiar_button.Size = new System.Drawing.Size(190, 77);
+            this.Limpiar_button.Size = new System.Drawing.Size(190, 71);
             this.Limpiar_button.TabIndex = 17;
             this.Limpiar_button.Text = "Iniciar De  Nuevo";
             this.Limpiar_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -122,14 +123,29 @@
             this.Ingresar_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
             this.Ingresar_button.Image = global::FormMenu.Properties.Resources.matematicas;
             this.Ingresar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Ingresar_button.Location = new System.Drawing.Point(38, 124);
+            this.Ingresar_button.Location = new System.Drawing.Point(62, 124);
             this.Ingresar_button.Name = "Ingresar_button";
-            this.Ingresar_button.Size = new System.Drawing.Size(157, 77);
+            this.Ingresar_button.Size = new System.Drawing.Size(190, 62);
             this.Ingresar_button.TabIndex = 12;
             this.Ingresar_button.Text = "CALCULAR";
             this.Ingresar_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Ingresar_button.UseVisualStyleBackColor = true;
             this.Ingresar_button.Click += new System.EventHandler(this.Ingresar_button_Click);
+            // 
+            // Regreso_button
+            // 
+            this.Regreso_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Regreso_button.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F);
+            this.Regreso_button.Image = global::FormMenu.Properties.Resources.reiniciar__1_;
+            this.Regreso_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Regreso_button.Location = new System.Drawing.Point(344, 192);
+            this.Regreso_button.Name = "Regreso_button";
+            this.Regreso_button.Size = new System.Drawing.Size(127, 71);
+            this.Regreso_button.TabIndex = 19;
+            this.Regreso_button.Text = "MENU PRINCIPAL";
+            this.Regreso_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Regreso_button.UseVisualStyleBackColor = true;
+            this.Regreso_button.Click += new System.EventHandler(this.Regreso_button_Click);
             // 
             // EJERCICIO3
             // 
@@ -137,7 +153,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.CancelButton = this.Salir_button;
-            this.ClientSize = new System.Drawing.Size(608, 272);
+            this.ClientSize = new System.Drawing.Size(752, 272);
+            this.Controls.Add(this.Regreso_button);
             this.Controls.Add(this.Salir_button);
             this.Controls.Add(this.Limpiar_button);
             this.Controls.Add(this.label3);
@@ -165,5 +182,6 @@
         private System.Windows.Forms.TextBox Numero_textBox;
         private System.Windows.Forms.Button Ingresar_button;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Regreso_button;
     }
 }
