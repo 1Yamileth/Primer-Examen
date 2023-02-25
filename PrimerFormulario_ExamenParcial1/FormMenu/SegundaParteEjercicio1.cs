@@ -19,22 +19,16 @@ namespace FormMenu
 
         private void Ingreso_Deposito_button_Click(object sender, EventArgs e)
         {
-            double deposito = 200000, tasa = 1.15;
-            //VALIDAMOS QUE INGRESE LOS DATOS
-            if (string.IsNullOrEmpty(Ingreso_Deposito_button.Text))
-            {
-                errorProvider1.SetError(Ingreso_Deposito_button, "Ingrese una Cantidad");
-                return;
-            }
+            double deposito = 200000, tasa = 1.5;//DATOS DADOS POR EL LIC
 
 
             double[] intereses = new double[12];
 
-            // calcular el interés para cada mes
+            // calculando el interés para cada mes
             for (int i = 0; i < 12; i++)
             {
                 double interes = CalcularInteres(deposito, tasa);//LLamamos al metodo calcular y pasamos los parametrox
-                intereses[i] = interes;
+                intereses[i] = interes;//EL interes generado lo almaceno aca
                 deposito += interes;
             }
 
@@ -44,19 +38,12 @@ namespace FormMenu
 
         }
 
-        //VALIDANDO QUE NO INGRESE LETRAS
-        //private void Deposito_textBox_KeyPress(object sender, KeyPressEventArgs e)
-     /*   {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }*/
+     
         //CALCULANDO EL INTERES MENSUAL
         public double CalcularInteres(double capital, double tasa)
         {
-            // tasa de interés mensual en decimal
-            double tasaMensual = (tasa / 100) / 12;
+            // tasa de interés mensual a decimal
+            double tasaMensual = (tasa / 100);
 
             // interés mensual
             double interes = capital * tasaMensual;

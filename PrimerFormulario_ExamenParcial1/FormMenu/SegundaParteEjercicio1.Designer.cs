@@ -48,7 +48,7 @@
             "La informacion aparecera aqui..."});
             this.Informe_listBox.Location = new System.Drawing.Point(12, 93);
             this.Informe_listBox.Name = "Informe_listBox";
-            this.Informe_listBox.Size = new System.Drawing.Size(407, 180);
+            this.Informe_listBox.Size = new System.Drawing.Size(407, 196);
             this.Informe_listBox.TabIndex = 9;
             // 
             // label2
